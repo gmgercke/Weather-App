@@ -1,0 +1,141 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(3, 25, 39, 0.95);
+}
+
+.appbody {
+  background: linear-gradient(
+    to top,
+    rgba(89, 117, 194, 0.75) 15.2%,
+    rgba(98, 142, 199, 0.75) 65%,
+    rgba(169, 189, 218, 0.75) 100.2%
+  );
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.3),
+    inset 10px 10px 10px 0px rgba(255, 255, 255, 0.25);
+}
+
+h1 {
+  font-size: 28px;
+  padding: 10px 0 0 0;
+  text-transform: capitalize;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+  padding: 0 0 10px 0;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: normal;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+  opacity: 0.7;
+}
+
+.search-field {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.25);
+  padding: 0 30px 0 5px;
+}
+
+.search-button {
+  color: rgba(3, 23, 46, 0.95);
+  background: linear-gradient(
+    to top,
+    rgba(89, 117, 194, 0.75) 15.2%,
+    rgba(98, 142, 199, 0.75) 65%,
+    rgba(169, 189, 218, 0.75) 100.2%
+  );
+  border: none;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.25);
+  margin-left: 5px;
+}
+
+.search-button:hover {
+  box-shadow: 0px 0px 5px 3px rgba(255, 255, 255, 0.25);
+}
+
+#current-loc {
+  color: rgba(3, 23, 46, 0.95);
+  background: linear-gradient(
+    to top,
+    rgba(89, 117, 194, 0.75) 15.2%,
+    rgba(98, 142, 199, 0.75) 65%,
+    rgba(169, 189, 218, 0.75) 100.2%
+  );
+  border: none;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.25);
+  margin-left: 5px;
+}
+
+.date,
+.time {
+  font-size: 14px;
+  font-weight: normal;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+  opacity: 0.7;
+}
+
+.current {
+  margin-bottom: 20px;
+}
+
+.logo-rain {
+  font-size: 110px;
+}
+
+.current-temp {
+  font-size: 26px;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.temp-unit {
+  font-size: 16px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+  opacity: 0.7;
+  vertical-align: top;
+}
+
+.celsius,
+.fahrenheit {
+  color: rgba(3, 25, 39, 0.95);
+  opacity: 0.7;
+}
+
+.celsius:hover,
+.fahrenheit:hover {
+  text-decoration: none;
+  color: rgba(3, 25, 39, 0.95);
+  opacity: 1;
+}
+
+.current-attributes {
+  font-size: 14px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+  opacity: 0.7;
+}
+
+.forecast {
+  font-size: 14px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.first,
+.second,
+.third,
+.fourth,
+.fifth {
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.25),
+    inset 3px 3px 3px 0px rgba(255, 255, 255, 0.25);
+  margin: 5px;
+  padding: 5px;
+}

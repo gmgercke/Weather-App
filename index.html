@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/cbca6d3979.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="src/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container appbody">
+      <form id="search-loc">
+        <input class="search-field" type="text" placeholder="Search City..." />
+        <input class="search-button" type="submit" value="Search" />
+        <button id="current-loc">Current Location</button>
+      </form>
+      <h1>
+        <span class="city">London</span>
+        <span class="date"></span>
+        <span class="time"></span>
+      </h1>
+      <h2>Cloudy</h2>
+      <div class="container current">
+        <div class="row align-items-center">
+          <div class="col current-weather">
+            <i class="fas fa-cloud-sun-rain logo-rain"></i>
+          </div>
+          <div class="col align-self-end current-temp">
+            <span class="temperature-value"> 16 </span>
+            <span class="temp-unit">
+              <a href="#" class="celsius">°C</a> |
+              <a href="#" class="fahrenheit">°F</a></span
+            >
+          </div>
+          <div class="col current-attributes">
+            Wind <span class="wind">32 km/h</span><br />
+            Humidity <span class="humidity"></span>93 %<br />
+            Precipitation <span class="precipitation">89 %</span>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="container forecast">
+        <div class="row">
+          <div class="col first">
+            Sat <br />15 °C <i class="fas fa-cloud-sun-rain"></i>
+          </div>
+          <div class="col second">
+            Sun <br />15 °C <i class="fas fa-cloud-sun-rain"></i>
+          </div>
+          <div class="col third">
+            Mon <br />15 °C <i class="fas fa-cloud-sun-rain"></i>
+          </div>
+          <div class="col fourth">
+            Tue <br />15 °C <i class="fas fa-cloud-sun-rain"></i>
+          </div>
+          <div class="col fifth">
+            Wed <br />15 °C <i class="fas fa-cloud-sun-rain"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
