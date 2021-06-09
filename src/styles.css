@@ -139,3 +139,9 @@ h2 {
   margin: 5px;
   padding: 5px;
 }
+
+.footer {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 12px;
+}
