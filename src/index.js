@@ -38,9 +38,15 @@ function showTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   let tempDisplay = document.querySelector(".temperature-value");
   tempDisplay.innerHTML = temperature;
-  let descriptor = response.data.weather[0].main;
+  let descriptor = response.data.weather[0].description;
   let descriptorDisplay = document.querySelector("h2");
   descriptorDisplay.innerHTML = descriptor;
+  let iconDisplay = document.querySelector("#icon");
+  iconDisplay.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconDisplay.setAttribute("alt", response.data.weather[0].description);
 }
 
 function citySearch(cityInput) {
@@ -49,6 +55,8 @@ function citySearch(cityInput) {
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
+
+citySearch("Berlin");
 
 function getCity(event) {
   event.preventDefault();
