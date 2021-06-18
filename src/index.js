@@ -34,14 +34,17 @@ function formatTime(currentTime) {
 
 function showTemp(response) {
   let cityDisplay = document.querySelector("h1 .city");
-  cityDisplay.innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let tempDisplay = document.querySelector(".temperature-value");
-  tempDisplay.innerHTML = temperature;
   let descriptor = response.data.weather[0].description;
   let descriptorDisplay = document.querySelector("h2");
-  descriptorDisplay.innerHTML = descriptor;
   let iconDisplay = document.querySelector("#icon");
+
+  celsiusBase = Math.round(response.data.main.temp);
+
+  cityDisplay.innerHTML = response.data.name;
+  tempDisplay.innerHTML = temperature;
+  descriptorDisplay.innerHTML = descriptor;
   iconDisplay.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -55,8 +58,6 @@ function citySearch(cityInput) {
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
-
-citySearch("Berlin");
 
 function getCity(event) {
   event.preventDefault();
@@ -81,16 +82,24 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(locationSearch);
 }
 
-function handleClickCelsius() {
+function handleClickCelsius(event) {
+  event.preventDefault();
+  clickFahrenheit.classList.remove("active");
+  clickCelsius.classList.add("active");
   let currentTemp = document.querySelector(".temperature-value");
-  currentTemp.innerHTML = "16";
+  currentTemp.innerHTML = celsiusBase;
 }
 
-function handleClickFahrenheit() {
+function handleClickFahrenheit(event) {
+  event.preventDefault();
+  clickCelsius.classList.remove("active");
+  clickFahrenheit.classList.add("active");
   let currentTemp = document.querySelector(".temperature-value");
-  let tempF = currentTemp.value + 5;
+  let tempF = Math.round((celsiusBase * 9) / 5 + 32);
   currentTemp.innerHTML = tempF;
 }
+
+let celsiusBase = null;
 
 let today = document.querySelector("h1 .date");
 today.innerHTML = formatDate(new Date());
@@ -109,3 +118,5 @@ clickCelsius.addEventListener("click", handleClickCelsius);
 
 let clickFahrenheit = document.querySelector(".fahrenheit");
 clickFahrenheit.addEventListener("click", handleClickFahrenheit);
+
+citySearch("Berlin");
