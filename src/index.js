@@ -20,8 +20,30 @@ function formatDate(currentDate) {
   let weekDay = weekDays[currentDate.getDay()];
   let month = months[currentDate.getMonth()];
 
-  let formattedDate = `${weekDay}, ${month} ${date}, ${year}`;
+  let formattedDate = `${weekDay}., ${month} ${date}, ${year}`;
   return formattedDate;
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let forecastDays = ["Thu", "Fri", "Sat"];
+  forecastDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `       <div class="col forecast-unit" id="forecast">
+            <div class="forecast-day">${day}</div>
+            <img src="x" alt="weather" id="icon" />
+            <div class="forecast-temps">
+            <span class="forecast-max-temp">15°</span>
+            <span class="forecast-min-temp">11°</span>
+            </div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function formatTime(currentTime) {
@@ -126,3 +148,4 @@ let clickFahrenheit = document.querySelector(".fahrenheit");
 clickFahrenheit.addEventListener("click", handleClickFahrenheit);
 
 citySearch("Berlin");
+displayForecast();
