@@ -48,7 +48,7 @@ function displayForecast(response) {
             <div class="forecast-temps">
             <span class="forecast-max-temp">${Math.round(
               day.temp.max
-            )}° / </span>
+            )}° | </span>
             <span class="forecast-min-temp">${Math.round(day.temp.min)}°</span>
             </div>
           </div>`;
@@ -131,25 +131,6 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(locationSearch);
 }
 
-function handleClickCelsius(event) {
-  event.preventDefault();
-  clickFahrenheit.classList.remove("active");
-  clickCelsius.classList.add("active");
-  let currentTemp = document.querySelector(".temperature-value");
-  currentTemp.innerHTML = celsiusBase;
-}
-
-function handleClickFahrenheit(event) {
-  event.preventDefault();
-  clickCelsius.classList.remove("active");
-  clickFahrenheit.classList.add("active");
-  let currentTemp = document.querySelector(".temperature-value");
-  let tempF = Math.round((celsiusBase * 9) / 5 + 32);
-  currentTemp.innerHTML = tempF;
-}
-
-let celsiusBase = null;
-
 let today = document.querySelector("h1 .date");
 today.innerHTML = formatDate(new Date());
 
@@ -161,12 +142,6 @@ cityForm.addEventListener("submit", getCity);
 
 let locationForm = document.querySelector("#current-loc");
 locationForm.addEventListener("click", getLocation);
-
-let clickCelsius = document.querySelector(".celsius");
-clickCelsius.addEventListener("click", handleClickCelsius);
-
-let clickFahrenheit = document.querySelector(".fahrenheit");
-clickFahrenheit.addEventListener("click", handleClickFahrenheit);
 
 citySearch("Berlin");
 displayForecast();

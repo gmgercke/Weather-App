@@ -75,28 +75,7 @@ h2 {
 }
 
 .temp-unit {
-  font-size: 16px;
-  opacity: 0.75;
-  vertical-align: text-top;
-}
-
-.celsius,
-.fahrenheit {
-  color: rgb(23, 70, 223);
-}
-
-.celsius:hover,
-.fahrenheit:hover {
-  text-decoration: none;
-}
-
-.current-temp .active {
-  color: rgb(34, 34, 34);
-  cursor: default;
-}
-
-.current-temp .active:hover {
-  text-decoration: none;
+  font-size: 30px;
 }
 
 .current-attributes {
